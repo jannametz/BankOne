@@ -28,10 +28,10 @@ Simple bank application with ability to manage accounts, transfer money between 
    "city": "Munich", 
    "amountOfMoney": 200,99, 
    "transactions": [5, 8, 32, 6] 
-   }```  
-
-#### Examples of a Transaction data JSON object:
-
+   }  
+```
+### Examples of a Transaction data JSON object:
+```
   {
    "id": 1,
    "dateTime": "2022-12-31 23:59:59",
@@ -49,14 +49,14 @@ Simple bank application with ability to manage accounts, transfer money between 
    "accountTo": "5",
    "amount": 50
   } 
-
+```
 #### Example of a error response JSON object:
-
+```
  {
    "timestamp": "2022-12-31 23:59:59",
    "problems": ["problem1", "problem2"]
   } 
-
+```
 ## Requirements:
 
 The REST service must expose the /accounts and /transactions endpoints, which allows for managing the collection of account and transaction records in the following way:
