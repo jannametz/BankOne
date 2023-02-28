@@ -32,7 +32,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 
 #### Examples of a Transaction data JSON object:
 
-``` {
+  {
    "id": 1,
    "dateTime": "2022-12-31 23:59:59",
    "type": "Transfer between accounts",
@@ -41,7 +41,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "amount": 200.50
    } 
 
-``` {
+  {
    "id": 2,
    "dateTime": "2022-12-21 23:59:59",
    "type": "Depositing own money to account",
@@ -52,7 +52,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 
 #### Example of a error response JSON object:
 
-``` {
+ {
    "timestamp": "2022-12-31 23:59:59",
    "problems": ["problem1", "problem2"]
   } 
