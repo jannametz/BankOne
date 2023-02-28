@@ -2,13 +2,13 @@
 Bank application
 
 Simple bank application with ability to manage accounts, transfer money between accounts and manage related transactions.
-Environment:
 
+## Environment:
     Java version: 11
     Maven
     Spring Boot version: 2.7.6.RELEASE
 
-General requirements:
+## General requirements:
 
     SQL database should be used for storing accounts and transactions. Please use in-memory H2 database and add it as dependency.
     Application should be able to work in multithreading environment.
@@ -16,9 +16,9 @@ General requirements:
     New transaction should be created every time when amount of money is changed in account.
     All layers of the application should be covered by unit tests.
 
-Data:
+## Data:
 
-Example of a Account data JSON object:
+** Example of a Account data JSON object:
 
 {
    "id": 1,
@@ -32,7 +32,7 @@ Example of a Account data JSON object:
    "transactions": [5, 8, 32, 6]
 }
 
-Examples of a Transaction data JSON object:
+** Examples of a Transaction data JSON object:
 
 {
    "id": 1,
@@ -52,18 +52,18 @@ Examples of a Transaction data JSON object:
    "amount": 50
 }
 
-Example of a error response JSON object:
+** Example of a error response JSON object:
 
 {
    "timestamp": "2022-12-31 23:59:59",
    "problems": ["problem1", "problem2"]
 }
 
-Requirements:
+## Requirements:
 
 The REST service must expose the /accounts and /transactions endpoints, which allows for managing the collection of account and transaction records in the following way:
 
-POST request to /accounts:
+## POST request to /accounts:
 
     creates a new account data record
 
@@ -85,7 +85,7 @@ POST request to /accounts:
 
     accepts an optional query string parameter, sort, that can take one of two values: either "creationDate" or "-creationDate". If the value is "creationDate", then the ordering is by date in ascending order. If it is "-creationDate", then the ordering is by creationDate in descending order. If there are two records with the same creationDate, the one with the smaller id must come first.
 
-    GET request to /accounts/<id>:
+    ## GET request to /accounts/<id>:
 
     returns a record with the given id
 
