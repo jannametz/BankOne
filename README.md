@@ -18,18 +18,17 @@ Simple bank application with ability to manage accounts, transfer money between 
 ## Data:
 
 #### Example of a Account data JSON object:
-
->  {
-> "id": 1,
-> "email": "user@host.com",
-> "creationDate": "2022-12-31",
-> "firstName": "Tomas",
-> "lastName": "Muller",
-> "country": "Germany",
-> "city": "Munich",
-> "amountOfMoney": 200,99,
-> "transactions": [5, 8, 32, 6]
->  }
+**  {  **
+** "id": 1, **
+** "email": "user@host.com", **
+** "creationDate": "2022-12-31", **
+** "firstName": "Tomas", **
+** "lastName": "Muller", **
+** "country": "Germany", **
+** "city": "Munich", **
+** "amountOfMoney": 200,99, **
+** "transactions": [5, 8, 32, 6] **
+** } **
 
 #### Examples of a Transaction data JSON object:
 
