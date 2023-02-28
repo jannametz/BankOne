@@ -18,7 +18,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 
 ## Data:
 
-** Example of a Account data JSON object:
+# Example of a Account data JSON object:
 
 {
    "id": 1,
@@ -32,7 +32,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "transactions": [5, 8, 32, 6]
 }
 
-** Examples of a Transaction data JSON object:
+# Examples of a Transaction data JSON object:
 
 {
    "id": 1,
@@ -52,7 +52,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "amount": 50
 }
 
-** Example of a error response JSON object:
+# Example of a error response JSON object:
 
 {
    "timestamp": "2022-12-31 23:59:59",
@@ -65,35 +65,23 @@ The REST service must expose the /accounts and /transactions endpoints, which al
 
 ## POST request to /accounts:
 
-    creates a new account data record
+creates a new account data record expects a valid account data object as its body payload, except that it does not have an id property adds the given object to the collection and assigns a unique long id to it
+the response code is 201 and the response body is the created record, including its unique id
 
-    expects a valid account data object as its body payload, except that it does not have an id property
+## GET request to /accounts:
 
-    adds the given object to the collection and assigns a unique long id to it
+the response code is 200 the response body is an array of matching records, ordered by their ids in increasing order
+accepts an optional query string parameter, date, in the format YYYY-MM-DD, for example /account?date=2022-11-25. When      this parameter is present, only the records with the matching date are returned.
 
-    the response code is 201 and the response body is the created record, including its unique id
+accepts an optional query string parameter, city, and when this parameter is present, only the records with the matching city are returned. The value of this parameter is case insensitive, so "London" and "london" are equivalent. Moreover, it might contain several values, separated by commas (e.g. city=london,Munich), meaning that records with the city matching any of these values must be returned.
 
-    GET request to /accounts:
+accepts an optional query string parameter, sort, that can take one of two values: either "creationDate" or "-creationDate". If the value is "creationDate", then the ordering is by date in ascending order. If it is "-creationDate", then the ordering is by creationDate in descending order. If there are two records with the same creationDate, the one with the smaller id must come first.
 
-    the response code is 200
+## GET request to /accounts/<id>:
 
-    the response body is an array of matching records, ordered by their ids in increasing order
-
-    accepts an optional query string parameter, date, in the format YYYY-MM-DD, for example /account?date=2022-11-25. When this parameter is present, only the records with the matching date are returned.
-
-    accepts an optional query string parameter, city, and when this parameter is present, only the records with the matching city are returned. The value of this parameter is case insensitive, so "London" and "london" are equivalent. Moreover, it might contain several values, separated by commas (e.g. city=london,Munich), meaning that records with the city matching any of these values must be returned.
-
-    accepts an optional query string parameter, sort, that can take one of two values: either "creationDate" or "-creationDate". If the value is "creationDate", then the ordering is by date in ascending order. If it is "-creationDate", then the ordering is by creationDate in descending order. If there are two records with the same creationDate, the one with the smaller id must come first.
-
-    ## GET request to /accounts/<id>:
-
-    returns a record with the given id
-
-    if the matching record exists, the response code is 200 and the response body is the matching object
-
-    if there is no record in the collection with the given id, the response code is 404
-
-    PATCH request to /accounts/<id>:
+ returns a record with the given id if the matching record exists, the response code is 200 and the response body is the matching object if there is no record in the collection with the given id, the response code is 404
+ 
+## PATCH request to /accounts/<id>:
 
     updates an account with the given id
 
