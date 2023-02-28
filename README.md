@@ -77,29 +77,17 @@ accepts an optional query string parameter, city, and when this parameter is pre
 
 accepts an optional query string parameter, sort, that can take one of two values: either "creationDate" or "-creationDate". If the value is "creationDate", then the ordering is by date in ascending order. If it is "-creationDate", then the ordering is by creationDate in descending order. If there are two records with the same creationDate, the one with the smaller id must come first.
 
-## GET request to /accounts/<id>:
+GET request to /accounts/<id>:
 
- returns a record with the given id if the matching record exists, the response code is 200 and the response body is the matching object if there is no record in the collection with the given id, the response code is 404
- 
-## PATCH request to /accounts/<id>:
+returns a record with the given id if the matching record exists, the response code is 200 and the response body is the matching object if there is no record in the collection with the given id, the response code is 404
 
-    updates an account with the given id
+PATCH request to /accounts/<id>:
+updates an account with the given id if the matching record exists, the response code is 200 and the response body is the  updated object if there is no record in the collection with the given id, the response code is 404
 
-    if the matching record exists, the response code is 200 and the response body is the updated object
+PUT request to /accounts?from=<fromId>&to=<toId>&amount=<moneyAmount>:
+transfers money between accounts with given ids if the matching records exists and account has enough money to transfer, the response code is 200 and the empty response body if there is no record(s) in the collection with the given id, the response code is 404 with error(s) explanation in response if account has not enough money to transfer, the response code is 400 with error explanation in response
 
-    if there is no record in the collection with the given id, the response code is 404
-
-    PUT request to /accounts?from=<fromId>&to=<toId>&amount=<moneyAmount>:
-
-    transfers money between accounts with given ids
-
-    if the matching records exists and account has enough money to transfer, the response code is 200 and the empty response body
-
-    if there is no record(s) in the collection with the given id, the response code is 404 with error(s) explanation in response
-
-    if account has not enough money to transfer, the response code is 400 with error explanation in response
-
-    GET request to /transactions:
+GET request to ```/transactions:```
 
     the response code is 200
 
@@ -111,7 +99,7 @@ accepts an optional query string parameter, sort, that can take one of two value
 
     accepts an optional query string parameter, sort, that can take one of two values: either "dateTime" or "-dateTime". If the value is "dateTime", then the ordering is by dateTime in ascending order. If it is "-dateTime", then the ordering is by dateTime in descending order. If there are two records with the same dateTime, the one with the smaller id must come first.
 
-    GET request to /transactions/<id>:
+    GET request to ```/transactions/<id>:```
 
     returns a record with the given id
 
