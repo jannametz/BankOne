@@ -18,7 +18,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 
 ## Data:
 
-# Example of a Account data JSON object:
+### Example of a Account data JSON object:
 
 {
    "id": 1,
@@ -32,7 +32,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "transactions": [5, 8, 32, 6]
 }
 
-# Examples of a Transaction data JSON object:
+### Examples of a Transaction data JSON object:
 
 {
    "id": 1,
@@ -52,7 +52,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "amount": 50
 }
 
-# Example of a error response JSON object:
+### Example of a error response JSON object:
 
 {
    "timestamp": "2022-12-31 23:59:59",
