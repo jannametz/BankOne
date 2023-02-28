@@ -3,9 +3,9 @@ Bank application
 Simple bank application with ability to manage accounts, transfer money between accounts and manage related transactions.
 
 ## Environment:
-    Java version: 11
-    Maven
-    Spring Boot version: 2.7.9.RELEASE
+* Java version: 11
+* Maven
+* Spring Boot version: 2.7.9.RELEASE
 
 ## General requirements:
 
