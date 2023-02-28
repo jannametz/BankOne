@@ -6,7 +6,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 ## Environment:
     Java version: 11
     Maven
-    Spring Boot version: 2.7.6.RELEASE
+    Spring Boot version: 2.7.9.RELEASE
 
 ## General requirements:
 
@@ -19,7 +19,7 @@ Simple bank application with ability to manage accounts, transfer money between 
 ## Data:
 
 ### Example of a Account data JSON object:
-
+>
 {
    "id": 1,
    "email": "user@host.com",
