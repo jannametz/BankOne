@@ -30,7 +30,7 @@ Simple bank application with ability to manage accounts, transfer money between 
    "transactions": [5, 8, 32, 6] 
    }  
 ```
-### Examples of a Transaction data JSON object:
+#### Examples of a Transaction data JSON object:
 ```
   {
    "id": 1,
