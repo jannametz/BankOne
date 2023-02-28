@@ -1,6 +1,5 @@
 # BankOne :woman_technologist:
-Bank application
-
+* Bank application
 Simple bank application with ability to manage accounts, transfer money between accounts and manage related transactions.
 
 ## Environment:
