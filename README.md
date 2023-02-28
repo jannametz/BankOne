@@ -61,10 +61,12 @@ Simple bank application with ability to manage accounts, transfer money between 
 
 The REST service must expose the /accounts and /transactions endpoints, which allows for managing the collection of account and transaction records in the following way:
 
-## POST request to /accounts:
+POST request to /accounts:
 
-creates a new account data record expects a valid account data object as its body payload, except that it does not have an id property adds the given object to the collection and assigns a unique long id to it
-the response code is 201 and the response body is the created record, including its unique id
+* creates a new account data record 
+* expects a valid account data object as its body payload, except that it does not have an id property
+* adds the given object to the collection and assigns a unique long id to it
+* the response code is 201 and the response body is the created record, including its unique id
 
 ## GET request to /accounts:
 
